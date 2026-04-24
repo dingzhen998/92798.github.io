@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>智能草莓营养站</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background-color: #f9f5f2; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { color: #e63946; }
+        .main { display: flex; gap: 30px; }
+        .left, .right { flex: 1; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .section-title { color: #e63946; border-bottom: 2px solid #f1faee; padding-bottom: 10px; margin-bottom: 20px; }
+        .nutrition-form { margin-bottom: 20px; }
+        .nutrition-form label { display: block; margin: 10px 0; }
+        .nutrition-form input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .nutrition-result { background: #f1faee; padding: 15px; border-radius: 8px; }
+        .bundle { display: flex; align-items: center; gap: 15px; margin: 20px 0; padding: 15px; background: #fff1e6; border-radius: 8px; }
+        .bundle img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; }
+        .bundle-info h3 { color: #e63946; margin: 0 0 10px 0; }
+        .bundle-price { font-weight: bold; color: #e63946; }
+        .original-price { text-decoration: line-through; color: #666; }
+        .buy-btn { background: #e63946; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 15px; }
+        .buy-btn:hover { background: #d62828; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>智能草莓营养站</h1>
+        <p>科学搭配，美味加倍，让每一颗草莓都物超所值</p >
+    </div>
+    <div class="main">
+        <div class="left">
+            <h2 class="section-title">AI营养推荐</h2>
+            <div class="nutrition-form">
+                <label for="weight">输入食用草莓重量（克）：</label>
+                <input type="number" id="weight" placeholder="例如：200" min="1">
+                <label for="goal">选择营养目标：</label>
+                <select id="goal" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px;">
+                    <option value="immune">增强免疫力</option>
+                    <option value="weight">体重管理</option>
+                    <option value="skin">皮肤健康</option>
+                </select>
+                <button onclick="calculateNutrition()" class="buy-btn">获取推荐</button>
+            </div>
+            <div class="nutrition-result" id="result">
+                <p>请输入草莓重量并选择营养目标，获取专属推荐</p >
+            </div>
+        </div>
+        
